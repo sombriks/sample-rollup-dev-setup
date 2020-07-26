@@ -1,5 +1,6 @@
 import serve from "rollup-plugin-serve"
 import copy from "rollup-plugin-copy"
+import livereload from 'rollup-plugin-livereload'
 
 export default {
   input: "src/main.js",
@@ -15,6 +16,7 @@ export default {
       targets: [
         { src: "public/*", dest: "dist" }
       ]
-    })
+    }),
+    livereload()
   ]
 }
