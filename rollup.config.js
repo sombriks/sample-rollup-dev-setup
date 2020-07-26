@@ -1,6 +1,7 @@
 import serve from "rollup-plugin-serve"
 import copy from "rollup-plugin-copy"
-import livereload from 'rollup-plugin-livereload'
+import livereload from "rollup-plugin-livereload"
+import sass from "rollup-plugin-sass"
 
 export default {
   input: "src/main.js",
@@ -17,6 +18,7 @@ export default {
         { src: "public/*", dest: "dist" }
       ]
     }),
-    livereload()
+    livereload(),
+    sass({output: true})
   ]
 }
